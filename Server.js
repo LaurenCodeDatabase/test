@@ -1,5 +1,29 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const app = express();
+//import mongoose from "mongoose";
+
+const userSchema = new mongoose.Schema({
+    name:{
+        type:String,
+        require: true
+    },
+    email:{
+        type:String,
+        unique:true,
+        require: true
+    },
+    password:{
+        type:String,
+        require: true
+    },
+    createdAt:{
+        type:Date,
+        default: Date.now
+    }
+})
+
+export const User = mongoose.model("User", userSchema);
 app.use(express.json());
 app.get("/",(req,res) => {
     res.status(200).send("Landing Page");
