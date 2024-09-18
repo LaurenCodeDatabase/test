@@ -1,13 +1,4 @@
-import express from "express";
-import mongoose from "mongoose";
-import bcrypt from "bcrypt";
-import jwt from 'jsonwebtoken';
-import router from "./routes/user.js";
-import cookieParser from "cookie-parser";
-import blogRouter from "./routes/blog.js";
-import { config } from "dotenv";
-import cors from 'cors';
-
+onst express = require("express");
 const app = express();
 app.use(express.json());
 app.get("/",(req,res) => {
