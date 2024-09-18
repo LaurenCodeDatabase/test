@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 //import mongoose from "mongoose";
-
+app.use(express.json());
 const userSchema = new mongoose.Schema({
     name:{
         type:String,
@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
 })
 
 const User = mongoose.model("User", userSchema);
-app.use(express.json());
+
 app.get("/",(req,res) => {
     res.status(200).send("Landing Page");
 });
