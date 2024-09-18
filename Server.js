@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-export const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 app.use(express.json());
 app.get("/",(req,res) => {
     res.status(200).send("Landing Page");
