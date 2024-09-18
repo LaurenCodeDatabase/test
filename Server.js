@@ -21,10 +21,11 @@ const userSchema = new mongoose.Schema({
         type:Date,
         default: Date.now
     }
-})
+});
 
 const User = mongoose.model("User", userSchema);
 
+mongoose.connect("mongodb+srv://pratapbangosavi84:mdv7ixpML1AIRxcK@mern-2024.ucvhw.mongodb.net/",{dbName: "MERN_2024"}).then(()=>console.log("MONGOODB is Connected"));
 app.get("/",(req,res) => {
     res.status(200).send("Landing Page");
 });
